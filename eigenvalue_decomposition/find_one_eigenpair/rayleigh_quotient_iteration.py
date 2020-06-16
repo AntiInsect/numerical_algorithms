@@ -18,10 +18,9 @@ def rayleigh_quotient_iteration(matrix, mu):
         
         # Normalization
         eigenvector_new /= np.linalg.norm(eigenvector_new)
-
         converge = np.linalg.norm(eigenvector_new - eigenvector) <= 10**(-11)
-        
         eigenvector = eigenvector_new
+
         # compute the Rayleigh quotient
         mu = np.dot(eigenvector.T, matrix * eigenvector) / np.dot(eigenvector.T, eigenvector)
     
@@ -36,7 +35,7 @@ if __name__ == "__main__":
          [1, 1.5, 2, 2.5, 11]]
     matrix = np.matrix(A)
 
-    mu = 17
+    mu = 7
     
     eigenvector, eigenvalue, iters = rayleigh_quotient_iteration(matrix, mu)
 

@@ -49,18 +49,17 @@ def arnoldi_fast_nocopy(A, v0, k):
     return V.T,  H
 
 if __name__ == "__main__":
-
-    def ConstructMatrix(N):
-        H = np.mat(np.zeros([N,N]))
-        for i in range(N):
-            for j in range(N):
-                H[i, j] = float(1 + min(i, j))
-        return H
-
-    N = 10
-    A = ConstructMatrix(N)
+    N = 5
+    A = [[7, 2.5, 2, 1.5, 1],
+         [2.5, 8, 2.5, 2, 1.5],
+         [2, 2.5, 9, 2.5, 2],
+         [1.5, 2, 2.5, 10, 2.5],
+         [1, 1.5, 2, 2.5, 11]]
+    A = np.matrix(A)
 
     v = np.mat( np.ones(N) ).T
     V, h = arnoldi(A, v, N)
+    print(V)
+    print(h)
     V, h = arnoldi_fast(A, v, N)
     V, h = arnoldi_fast_nocopy(A, v, N)

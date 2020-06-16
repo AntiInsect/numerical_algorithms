@@ -25,9 +25,6 @@ def orthogonal_iteration(matrix, k):
 
     return np.diag(R), Q, iters
 
-def qr_algorithm(matrix):
-    return orthogonal_iteration(matrix, matrix.shape[0]) 
-
 
 if __name__ == "__main__":
     A = [[7, 2.5, 2, 1.5, 1],
@@ -46,8 +43,3 @@ if __name__ == "__main__":
     pprint(Q)
     pprint(iters)
 
-    R, Q, iters = qr_algorithm(matrix)
-
-    pprint(R)
-    pprint(Q)
-    pprint(iters)
