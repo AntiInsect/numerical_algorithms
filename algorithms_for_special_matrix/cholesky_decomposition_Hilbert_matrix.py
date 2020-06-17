@@ -4,22 +4,21 @@ import numpy as np
 
 
 def generate_Hilbert(n):
-    Hilbert = [[0 for i in range(n)]for j in range(n)] # Initializing an nxn matrix of zeros
-    for i in range(0,n):
-        for j in range(0,n):
-            Hilbert[i][j] = 1/(i+j+1)
+    Hilbert = np.zeros((n, n))
+    for i in range(n):
+        for j in range(n):
+            Hilbert[i][j] = 1 / (i+j+1)
     return Hilbert
 
 def cholesky_decomposition(Hilbert):
     # Initializing an nxn matrix of zeros
-    L = [[0 for i in range(len(Hilbert))]for j in range(len(Hilbert))]
-    
+    L = np.zeros((len(Hilbert), len(Hilbert)))
     # Initializing the first element in the matrix
     L[0][0] = (Hilbert[0][0])**0.5
     
     # Initializing the first column of the matrix
     for i in range(1, len(Hilbert)):
-        L[i][0] = (Hilbert[0][i])/(L[0][0])
+        L[i][0] = Hilbert[0][i] / L[0][0]
     
     # Filling-in elsewhere
     for i in range(1, len(Hilbert)):
@@ -33,11 +32,11 @@ def cholesky_decomposition(Hilbert):
     return L
 
 if __name__ == "__main__":
-    order = 5 
-    hilbert_mat = generate_Hilbert(order)
+    N = 5 
+    hilbert_mat = generate_Hilbert(N)
     matrix = np.matrix(cholesky_decomposition(hilbert_mat))
     pprint(hilbert_mat)
     pprint(np.array(matrix) @ np.array(matrix).T)
 
     # from scipy.linalg import hilbert
-    # print(np.linalg.cholesky(hilbert(order)))
+    # print(np.linalg.cholesky(hilbert(N)))
