@@ -1,7 +1,7 @@
 import cmath
 
 
-def muller_method(f, x0, x1, x2):
+def muller(f, x0, x1, x2):
     iters = 0
     while abs(f(x2)) > 10**(-7):
         q = (x2 - x1) / (x1 - x0)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     fn = lambda x: x**3 - x**2 - x - 1	
 
     x0, x1, x2 = 0, 1, 2
-    x, iters = muller_method(fn, x0, x1, x2)
+    x, iters = muller(fn, x0, x1, x2)
     print("final value:", x)
     print("Converge in %d iterations " %iters)
 

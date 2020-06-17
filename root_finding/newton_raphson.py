@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 
-def newton_raphson_method(f, f_pr, x0):
+def newton_raphson(f, f_pr, x0):
     xnew = xold = x0
     dx = 1000.
     iters = 0
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     plt.grid('on')
 
     try:
-        # x = newton_raphson_method(fn, fn_der, x_init)
+        # x = newton_raphson(fn, fn_der, x_init)
         x = method_vis(fn, fn_der, x_init, ax)
         # x = method_animate(fn, fn_der, x_init, ax, fig)
         print("final value:", x)

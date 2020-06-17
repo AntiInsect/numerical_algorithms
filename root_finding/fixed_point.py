@@ -82,3 +82,4 @@ if __name__ == "__main__":
 
     x = fixed_point(fn, x_init, ax)
     print("final value:", x)
+
