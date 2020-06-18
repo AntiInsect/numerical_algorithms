@@ -25,24 +25,24 @@ from search_minima.RMSprop import RMSprop
 xmin, xmax, xstep = -2.05, 0.6, 0.03
 ymin, ymax, ystep = -1.05, 1.05, 0.03
 x, y = np.meshgrid(np.arange(xmin, xmax + xstep, xstep), np.arange(ymin, ymax + ystep, ystep))
-z = sixhump_fn(x, y)
+z = shubert_fn(x, y)
 
 
-x_init = -1.3
-y_init = -1.
+x_init = -0.5
+y_init = 0.25
 n_iter = 300
 lr = 0.01
 
 
 # Initiate gradient descent 
-plain_gradient_descent_ = plain_gradient_descent(fn = sixhump_fn, fn_grad=fn_grad)
-momentum_ = momentum(fn = sixhump_fn, fn_grad=fn_grad)
-adam_ = adam(fn = sixhump_fn, fn_grad=fn_grad)
-adamax_ = adamax(fn = sixhump_fn, fn_grad=fn_grad)
-nadam_ = nadam(fn = sixhump_fn, fn_grad=fn_grad)
-amsgrad_ = amsgrad(fn = sixhump_fn, fn_grad=fn_grad)
-nag_ = nag(fn = sixhump_fn, fn_grad=fn_grad)
-RMSprop_ = RMSprop(fn = sixhump_fn, fn_grad=fn_grad)
+plain_gradient_descent_ = plain_gradient_descent(fn = shubert_fn, fn_grad=fn_grad)
+momentum_ = momentum(fn = shubert_fn, fn_grad=fn_grad)
+adam_ = adam(fn = shubert_fn, fn_grad=fn_grad)
+adamax_ = adamax(fn = shubert_fn, fn_grad=fn_grad)
+nadam_ = nadam(fn = shubert_fn, fn_grad=fn_grad)
+amsgrad_ = amsgrad(fn = shubert_fn, fn_grad=fn_grad)
+nag_ = nag(fn = shubert_fn, fn_grad=fn_grad)
+RMSprop_ = RMSprop(fn = shubert_fn, fn_grad=fn_grad)
 
 
 # Obtain the path taken by pv gradient descent 
@@ -114,14 +114,14 @@ paths_ = paths_.append(nag_df)
 
 # Draw path and loss path from individual methods
 paths = [np.array(paths_.loc[method]) for method in methods]
-zpaths = [sixhump_fn(*path) for path in paths]
+zpaths = [shubert_fn(*path) for path in paths]
 
 
 
 
 # Plot figure
 fig = plt.figure(figsize=(8, 5), dpi = 120)
-ax = plt.axes(projection='3d', elev = 35, azim = 65)
+ax = plt.axes(projection='3d')
 
 ax.plot_surface(x, y, z, rstride=1, cstride=1,
                 cmap='twilight', edgecolor='none', alpha = 0.62)

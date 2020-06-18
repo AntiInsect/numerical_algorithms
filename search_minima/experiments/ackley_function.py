@@ -143,4 +143,4 @@ ax.legend(loc='upper left', fontsize = 'xx-small')
 plt.show()
 
 # Save as a gif
-# anim.save('/Users/updrew/Desktop/lais_project/numerical_algorithms/search_minima/experiments/ackley_pv.gif', writer='pillow', fps=60)
+# anim.save('/Users/updrew/Desktop/lais_project/numerical_algorithms/search_minima/experiments/ackley.gif', writer='pillow', fps=60)

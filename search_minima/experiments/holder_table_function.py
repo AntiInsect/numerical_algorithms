@@ -138,3 +138,5 @@ anim = TrajectoryAnimation3D(*paths, zpaths=zpaths, labels=methods, ax=ax)
 ax.legend(loc="upper left", fontsize='xx-small')
 
 plt.show()
+# anim.save('/Users/updrew/Desktop/lais_project/numerical_algorithms/search_minima/experiments/holder.gif', writer='pillow', fps=60)
+
