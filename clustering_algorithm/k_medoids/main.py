@@ -1,4 +1,4 @@
-from KMedoids import KMedoids
+from k_medoids import KMedoids
 import matplotlib.pyplot as plt
 
 

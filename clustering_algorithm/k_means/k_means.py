@@ -292,7 +292,7 @@ def sort_for_plot(x, y):
     return zip(*sorted(zip(x, y)))
 
 
-def main():
+if __name__ == "__main__":
     argv = sys.argv
     print("Command line args are {}: ".format(argv))
 
@@ -324,4 +324,3 @@ def main():
                              distortion, plot_config)
 
 
-if __name__ == "__main__": main()

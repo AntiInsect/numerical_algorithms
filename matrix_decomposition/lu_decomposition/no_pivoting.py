@@ -4,6 +4,8 @@ from pprint import pprint
 
 def no_pivoting(A, b):
     n = len(A)
+
+    
     L = np.asarray(np.identity(n))
     U = np.copy(A)
     P = np.identity(n)

@@ -105,6 +105,7 @@ def method_animate(f, f_pr, x0, ax, fig):
         ax.plot(xnew, 0, 'ro')
         plt.legend()
         plt.show()
+
         return xnew
 
 def set_axis_lims(ax, data, f):
