@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# adaptive learning rate
 class adam:    
 
     def __init__(self, fn, fn_grad):
@@ -61,7 +62,3 @@ class adam:
         self.z_path_adam = z_path
         self.z_adam = z
         return x_path,y_path,z_path
-
-
-if __name__ == "__main__":
-    from plain_gradient_descent import plain_gradient_descent
