@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class plain_gradient_descent:
+class gradient_descent:
     
     def __init__(self, fn, fn_grad):
         self.fn = fn

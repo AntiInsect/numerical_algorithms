@@ -10,14 +10,14 @@ from IPython.display import HTML
 from functions import *
 from animations import *
 
-from search_minima.plain_gradient_descent import plain_gradient_descent
-from search_minima.momentum import momentum
-from search_minima.adam import adam
-from search_minima.adamax import adamax
-from search_minima.nadam import nadam
-from search_minima.amsgrad import amsgrad
-from search_minima.nag import nag
-from search_minima.RMSprop import RMSprop
+from unconstrained_optimization.gradient_descent import gradient_descent
+from unconstrained_optimization.momentum import momentum
+from unconstrained_optimization.adam import adam
+from unconstrained_optimization.adamax import adamax
+from unconstrained_optimization.nadam import nadam
+from unconstrained_optimization.amsgrad import amsgrad
+from unconstrained_optimization.nag import nag
+from unconstrained_optimization.RMSprop import RMSprop
 
 
 
@@ -34,7 +34,7 @@ n_iter = 100
 lr = 0.13
 
 # Initiate gradient descent 
-plain_gradient_descent_ = plain_gradient_descent(fn = ackley_fn, fn_grad=fn_grad)
+plain_gradient_descent_ = gradient_descent(fn = ackley_fn, fn_grad=fn_grad)
 momentum_ = momentum(fn = ackley_fn, fn_grad=fn_grad)
 adam_ = adam(fn = ackley_fn, fn_grad=fn_grad)
 adamax_ = adamax(fn = ackley_fn, fn_grad=fn_grad)
