@@ -77,7 +77,7 @@ if __name__ == "__main__":
     print(np.allclose(x_kacz, true_sol, 10**(-2)))
 
     # plt.figure(figsize=(14,8))
-    # plt.semilogy(res_kacz, label='Lyusternick Kaczmarz')
+    # plt.semilogy(res_kacz, label='Random Lyusternick Kaczmarz')
     # plt.title('Relative residuals', fontsize = 20)
     # plt.ylabel('Value', fontsize = 12)
     # plt.xlabel('Projection number', fontsize = 12)

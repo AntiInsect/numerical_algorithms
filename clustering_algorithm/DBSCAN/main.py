@@ -2,10 +2,7 @@ from dbscanner import DBScanner
 import re, csv, sys
 
 
-CONFIG = 'config.txt'
-# DATA = 'data/abc.csv'
-# DATA = 'data/jain.csv'
-DATA = 'data/dummy.csv'
+
 
 
 
@@ -45,7 +42,12 @@ def read_config():
         sys.exit()
     return config
 
-def main():
+
+if __name__ == "__main__":
+    CONFIG = 'config.txt'
+    DATA = 'data/abc.csv'
+    # DATA = 'data/jain.csv'
+    # DATA = 'data/dummy.csv'
 
     config = read_config()
     dbc = DBScanner(config)
@@ -53,6 +55,3 @@ def main():
 
     dbc.dbscan(data)
     dbc.export()
-
-if __name__ == "__main__":
-    main()

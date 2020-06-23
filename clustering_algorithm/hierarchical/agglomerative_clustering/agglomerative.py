@@ -122,9 +122,9 @@ class Cluster:
 						similarity_1 = computeDistance(seq1, seq2)
 						cls.simMatrix[cID, _cID] = similarity_1
 						cls.simMatrix[_cID, cID] = similarity_1
-						print("similarity between {} and {} = {}\r".format(cID, _cID, similarity_1), end='', flush=True)
+						# print("similarity between {} and {} = {}\r".format(cID, _cID, similarity_1), end='', flush=True)
 						sys.stdout.flush()
-					print('')
+					# print('')
 				# Save The Pickle File
 				with open(pickleFilePath, 'wb') as file:
 					pickle.dump(cls.simMatrix, file)
@@ -204,14 +204,14 @@ class Cluster:
 			mergedCluster.addMember(key, delCluster.clusterMembers[key])
 		mergedCluster.updateID(iteration)
 		mergedCluster.incrementFactor()
-		print('Union ({} - {}), distance {}'.format(toDelete, mergedRC, dist))
+		# print('Union ({} - {}), distance {}'.format(toDelete, mergedRC, dist))
 
 		# Delete the redundant clusters explicityly
 		delCluster.destroy()
 		return mergedRC, toDelete, mergedCluster.memberCount, mergedCluster.factor
 
 # Driver Function to execute the Heirarchical Clustering
-@timer
+# @timer
 def main():
 	test = False
 	heuristic = 'Centroid'
@@ -224,7 +224,7 @@ def main():
 		clusters = [Cluster(dataPoint, data[dataPoint]) for dataPoint in list(data.keys())[:]]		
 	Cluster.generateInitialDistanceMatrix(test)
 	Uni = UnionTracker(len(clusters))
-	print('')
+	# print('')
 	iteration = 0
 	while(Cluster.currentClusterCount() > 1):
 		clsA, clsB, dist = Cluster.findMinDistance()

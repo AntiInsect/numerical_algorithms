@@ -293,10 +293,10 @@ def sort_for_plot(x, y):
 
 
 if __name__ == "__main__":
-    argv = sys.argv
-    print("Command line args are {}: ".format(argv))
+    # argv = sys.argv
+    # print("Command line args are {}: ".format(argv))
 
-    config = load_config(argv[1])
+    config = load_config('resources/basic2d.config')
 
     print(config)
 

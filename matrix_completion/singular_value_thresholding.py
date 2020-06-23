@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 # Solve using iterative singular value thresholding.
-def singular_value_thresholding(A, mask, tau=None, delta=None, epsilon=1e-2, max_iterations=100, algorithm='randomized'):
+def singular_value_thresholding(A, mask, tau=None, delta=None, epsilon=1e-2, max_iterations=500, algorithm='randomized'):
     """    
     Parameters:
     -----------
